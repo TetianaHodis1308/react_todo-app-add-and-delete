@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { Todo } from '../../types/Todo';
+import { Todo } from '../types/Todo';
 import React from 'react';
 
 type TodoItemProps = {
@@ -29,16 +29,18 @@ export const TodoItem: React.FC<TodoItemProps> = ({
           aria-label="Toggle todo status"
         />
       </label>
-      {isLoading ? (
-        <div data-cy="TodoLoader" className="modal overlay is-active">
-          <div className="modal-background has-background-white-ter" />
-          <div className="loader" />
-        </div>
-      ) : (
-        <span data-cy="TodoTitle" className="todo__title">
-          {todo.title}
-        </span>
-      )}
+
+      <div
+        data-cy="TodoLoader"
+        className={cn('modal overlay', { 'is-active': isLoading })}
+      >
+        <div className="modal-background has-background-white-ter" />
+        <div className="loader" />
+      </div>
+      <span data-cy="TodoTitle" className="todo__title">
+        {todo.title}
+      </span>
+
       <button
         type="button"
         className="todo__remove"
