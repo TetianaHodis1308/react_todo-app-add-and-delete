@@ -1,15 +1,15 @@
 import { Todo } from '../types/Todo';
 
-type ClearCompletedTodosButtonProps = {
+type СlearCompletedBtnProps = {
   completedTodo: Todo[];
   onDeleteTodo: (todo: Todo) => void;
 };
 
-export const ClearCompletedTodosButton = ({
+export const СlearCompletedBtn = ({
   completedTodo,
   onDeleteTodo,
-}: ClearCompletedTodosButtonProps) => {
-  const availableCompletedTodo = completedTodo.length > 0;
+}: СlearCompletedBtnProps) => {
+  const hasCompletedTodo = completedTodo.length > 0;
 
   return (
     <button
@@ -21,7 +21,7 @@ export const ClearCompletedTodosButton = ({
           onDeleteTodo(todo);
         });
       }}
-      disabled={!availableCompletedTodo}
+      disabled={!hasCompletedTodo}
     >
       Clear completed
     </button>
