@@ -17,9 +17,6 @@ export const App: React.FC = () => {
   );
   const [todoFilter, setTodoFilter] = useState<TodoFilters>(TodoFilters.All);
   const [tempTodo, setTempTodo] = useState<Todo | null>(null);
-  // const [processDeletingTodoIds, setProcessDeletingTodoIds] = useState<
-  //   number[]
-  // >([]);
   const [todoIdsToDelete, setTodoIdsToDelete] = useState<number[]>([]);
 
   const isVisibleFooter = todos.length !== 0;
